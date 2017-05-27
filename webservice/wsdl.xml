@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<definitions name='myservice' xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost/webservice/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://localhost/webservice/"> 
+  <!-- 
+    targetNamespace：目标命名空间。
+    name：文件名字。
+    soap：服务器url地址。
+
+    从底部写起。
+   -->
+  <!--<types> 元素定义 web service 使用的数据类型,WSDL 使用 XML Schema 语法来定义数据类型,也可以自定义Schema不包含的类型-->  
+  <types> 
+    <xsd:schema targetNamespace="http://localhost/webservice/"> </xsd:schema> 
+  </types>  
+  <!--
+<message> 元素可定义每个消息的部件,以及相关联的数据类型.
+-->  
+  <message name="sumRequest"> 
+    <part name="term" type="xsd:string"/> 
+  </message>  
+  <message name="sumResponse"> 
+    <part name="value" type="xsd:string"/> 
+  </message>  
+  <!--
+    <portType>：该元素是最重要的WSDL元素，它可描述一个webservice可被执行的操作以及相关的消息。它告诉你去哪个WebService的连接点,扮演了一个控制者。
+  -->  
+  <portType name="mylist"> 
+    <!-- operation：操作，可以有多个 -->
+    <operation name="sum"> 
+      <input message="tns:sumRequest"/>  
+      <output message="tns:sumResponse"/> 
+    </operation> 
+  </portType>
+  
+  <!--<binding> 元素为每个端口定义消息格式和协议细节-->  
+  <binding name="pay" type="tns:mylist"> 
+    <!--
+        style:属性可取值 "rpc" 或 "document",ransport:属性定义了要使用的 SOAP 协议.在这个例子中我们使用 HTTP
+    -->  
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>  
+    <!--
+        operation：该元素定义了每个端口提供的操作,对于每个操作,相应的 SOAP 行为都需要被定义。
+                    相当于定义操作的输入和输出细节：编码格式之类的。
+    -->  
+    <operation name="sum"> 
+      <soap:operation soapAction="http://www.cwtservice.cn/newOperation/"/>  
+      <input> 
+        <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/> 
+      </input>
+      <output> 
+        <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/> 
+      </output> 
+    </operation> 
+  </binding>  
+
+  <!--
+      <service>：包含一个或者多个port元素,每个port元素表示一个不同的Web服务，也就是说你这个服务器提供了哪些服务。
+  -->
+  <service name="MyWeb"> 
+    <port name="pay" binding="tns:pay"> 
+      <!-- 该web服务器指定调用的php脚本页面 -->
+      <soap:address location="http://localhost/webservice/service.php"/> 
+    </port> 
+  </service> 
+</definitions>

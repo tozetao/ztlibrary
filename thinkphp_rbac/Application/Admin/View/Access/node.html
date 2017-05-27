@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta http-equiv="X-UA-Compatiable" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<include file="Public/public"/>
+	<style type="text/css">
+		.title{margin:10px;}
+	</style>
+</head>
+<body>
+	<div class="title">
+		<a class="btn btn-default" href="{:U('Admin/Access/add_node')}" >添加节点</a>
+	</div>
+	<div class="container-fluid">
+		<foreach name="data" item="v">
+			<div style="margin:5px;border-bottom:1px dotted #ccc">
+				<button type="button" class="btn btn-primary">{$v['title']}</button>
+				<a href="{:U('Admin/Access/add_node',array('pid'=>$v['id'],'level'=>$v['level'] + 1))}">添加</a>
+				<a href="{:U('Admin/Access/del_node',array('id'=>$v['id']))}">删除</a>
+			</div>
+			<foreach name="v['child']" item="con">
+				<div style="margin:5px;border-top:1px solid #555">
+					<button type="button" class="btn btn-success">{$con['title']}</button>
+					<a href="{:U('Admin/Access/add_node',array('pid'=>$con['id'],'level'=>$con['level'] + 1))}">添加</a>
+					<a href="{:U('Admin/Access/del_node',array('id'=>$con['id']))}">删除</a>
+				</div>
+				<div style="margin:5px;">
+					<foreach name="con['child']" item="act">
+						<button type="button" class="btn btn-info" >{$act['title']}</button>
+						<a style="margin-right:10px" href="{:U('Admin/Access/del_node',array('id'=>$act['id']))}">删除</a>
+					</foreach>
+				</div>
+				
+			</foreach>
+		</foreach>
+		
+	</div>
+</body>
+</html>

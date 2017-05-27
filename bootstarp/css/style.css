@@ -1,0 +1,37 @@
+body{
+	padding-top: 70px;
+}
+
+/*针对搜索框的样式设置*/
+.navbar-inverse input[type="text"]{
+	border: none;
+	color: #999;
+	background: #313131;
+}
+.navbar-inverse form{
+	position: relative;
+}
+
+.navbar-inverse button[type="submit"]{
+	position: absolute;
+	top: 30%;
+	right: 20px;
+	background: none;
+	border: none;
+}
+
+@media(min-width: 768px){
+	.navbar-inverse button[type="submit"]{
+		top: 15%;
+	}
+}
+
+.navbar-inverse .glyphicon{
+	color: #999;
+}
+
+
+
+.profile{
+	margin-right: 25px;
+}

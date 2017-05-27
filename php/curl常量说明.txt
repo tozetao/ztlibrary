@@ -1,0 +1,38 @@
+curl_init()
+curl_getinfo()
+
+curl_error();
+curl_errno();
+	返回错误号或0（如果没有错误发生）
+
+
+一些常量参数
+CURLOPT_URL
+	url地址
+CURLOPT_TIMEOUT
+	最大连接时间
+CURLOPT_HEADER
+	是否将响应头包含在输出中
+CURLOPT_RETURNTRANSFER
+	抓取网页的结果是否直接输出，默认false直接输出
+CURLOPT_USERAGENT
+	在请求中包含一个user-agent头的字符串
+CURLOPT_REFERER
+	在请求中包含一个referer头的字符串
+
+CURLOPT_POST
+	指定请求类型为post类型
+CURLOPT_POSTFIELDS
+	post请求的字段内容，值是键值对数组
+CURLOPT_NOBODY
+	启用时将不对html中的body做输出
+
+CURLOPT_MAXREDIRS
+	指定最多的http重定向的数量，
+CURLOPT_HTTPHEADER
+	设置header
+CURLOPT_FOLLOWLOCATION
+CURLOPT_COOKIEJAR
+	连接关闭后，指定存放cookie信息的文件名称
+CURLOPT_COOKIEFILE
+	包含cookie信息的文件名

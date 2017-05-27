@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh-hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 自定义样式  -->
+    <style>
+        img {
+            width: 100%;
+        }
+        small {
+            display: inline-block;
+            min-width: 10px;
+            padding: 3px 7px;
+            font-size: 12px;
+            font-weight: normal;
+            line-height: 1;
+            color: #468847;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            background-color: #dff0d8;
+            border-radius: 10px;
+            font-family: Consolas,"Courier New",monospace;
+            margin-bottom: 5px;
+            opacity: 0.8;
+         
+        }
+        .list-group {
+            padding: 0;
+            margin-top: 30px;
+            position: relative;
+        }
+        .list-group li{
+            list-style: none;
+            padding: 10px;
+            width: 21%;
+            float: left;
+        }
+
+        h6 {
+            margin: 0;
+            text-align: center;
+        }
+
+        ul>small {
+            position: absolute;
+            top: -10px;
+        }
+    
+        .page-header {
+            border-bottom: 1px solid #eee;
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        }
+        .page-header h1 {
+            margin-bottom: 5px;
+            line-height: 1;
+            color: #4B4B4B;
+            font-weight: 200;
+            margin-left: 8px;
+        }
+        .page-header h2 {
+            font-weight: 100;
+            padding-bottom: 0;
+            padding-top: 0;
+            margin-top: 0;   
+            margin-left: 8px;
+        }
+        
+        * {
+            line-height: 1.5;
+        }
+        h1, h2, h3, p {
+            line-height: 1.5;
+        }
+        h2 {
+            color: #ccc;
+            font-size: 20px;
+        }
+        .container {
+            width: 680px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        
+        .album img {
+            
+        }
+        #search {
+            margin-top: 20px;
+            padding: 5px;
+            width: 200px;
+        }
+        label {
+            font-size: 12px;
+        }
+        .avatar {
+            border-radius: 50%;
+            width: 50px;
+            float: left;
+            margin-right: 15px;
+            padding-left: 5px;
+        }
+        
+a:link {
+    color: #0e90d2;
+}
+a:visited {
+    color: #ccc;
+}
+li:hover {
+    background-color: #eee;
+}
+li:active {
+    background-color: #8058a5;
+}
+li:active a {
+    color: #fff;
+}
+#search:focus {
+    outline: none;
+    border: 2px solid #129fea;
+}
+li:target {
+    background-color: #eee;
+}
+
+    ul:first-child{
+        border-radius: 50%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="page-header">
+        <div class="container">
+            <img src="images/coldplay.jpg" class="avatar" alt="">
+            <h1>选择</h1>
+            <h2>Selector</h2>
+        </div>
+    </div>
+   
+    <div class="container">
+      
+        <ul class="list-group" >
+            <li class="album" data-album="single atlas" id="atlas">
+                <img src="images/atlas.jpg" alt="atlas">
+                <h6><a href="#atlas" >Atlas</a></h6>
+            </li>
+            <li class="album" data-album="single" id="christmas">
+                <img src="images/christmas_lights.jpg" alt="christmas_lights">
+                <h6><a href="#christmas">Christmas Lights</a></h6>
+            </li>
+            <li class="album" data-album="multiple" id="mylo">
+                <img src="images/mylo_xyloto.jpg" alt="mylo_xyloto">
+                <h6><a href="#mylo">Mylo Xyloto</a></h6>
+            </li>
+            <li class="album" data-album="single" id="paradise">
+                <img src="images/paradise.jpg" alt="paradise">
+                <h6><a href="#paradise">Paradise</a></h6>
+            </li>
+            <li class="album" data-album="multiple" id="prospekts">
+                <img src="images/prospekts.jpg" alt="prospekts">
+                <h6><a href="#prospekts">Prospekts</a></h6>
+            </li>
+            <li class="album" data-album="single" id="viva">
+                <img src="images/viva_la_vida.jpg" alt="Viva_la_vida">
+                <h6><a href="#viva">Viva la Vida</a></h6>
+            </li>
+            <li class="album" data-album="multiple" id="x_y">
+                <img src="images/x_y.jpg" alt="x_y">
+                <h6><a href="#x_y">X And Y</a></h6>
+            </li>
+
+            <li class="album" data-album="multiple" id="panic">
+                <img src="images/dont_panic.jpg" alt="dont_panic">
+                <h6><a href="#panic">Don't Panic</a></h6>
+            </li>
+            <li class="album" data-album="multiple" id="fixyou">
+                <img src="images/fix_you.jpg" alt="fix_you">
+                <h6><a href="#fixyou">Fix you</a></h6>
+            </li>
+            <li class="album" data-album="single" id="lost">
+                <img src="images/Lost.jpg" alt="lost">
+                <h6><a href="#lost">Lost</a></h6>
+            </li>
+            <li class="album" data-album="multiple" id="parachutes">
+                <img src="images/parachutes.jpg" alt="parachutes">
+                <h6><a href="#parachutes">Parachutes</a></h6>
+            </li>
+            <li class="album" data-album="multiple" id="vivalavida">
+                <img src="images/viva.jpg" alt="Viva la Vida or...">
+                <h6><a href="#vivalavida">Viva la Vida...</a></h6>
+            </li>
+        </ul>
+    </div>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+       
+    </script>
+</body>
+
+</html>
+

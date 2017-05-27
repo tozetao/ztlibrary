@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>导航栏</title>
+
+</head>
+<body>
+        
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#responsive-navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand"><strong>ninghao</strong>.net</a>
+            </div>
+            <div class="collapse navbar-collapse" id="responsive-navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">课程</a></li>
+                    <li><a href="#">博客</a></li>
+                    <li><a href="#">手册</a></li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <input type="text" placeholder="搜索" class="form-control">
+                    <button type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </form>
+
+                <a href="" class="hidden-xs btn btn-primary btn-sm navbar-btn navbar-right">订阅课程</a>
+
+                <div class="profile navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="">注册</a></li>
+                        <li><a href="" data-toggle="modal" data-target="#login-modal">登录</a></li>
+                    </ul>
+                    <!-- <p class="navbar-text">您好，<a href="#" class="navbar-link">王皓</a></p>-->
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <p class="alert alert-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, accusantium quo culpa laborum? Voluptatibus, pariatur, porro, numquam, commodi expedita sequi quis eaque aspernatur debitis natus rerum sed doloremque nisi accusantium.</p>
+    </div>
+    
+ 
+    <!-- Modal -->
+    <div class="modal fade" id="login-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4>用户登录</h4>
+                </div>
+                <div class="modal-body">
+                    <p>用户登录用的表单</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    
+    
+    <script src="lib/jquery-2.1.1.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/holder.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

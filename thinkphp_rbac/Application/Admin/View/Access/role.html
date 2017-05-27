@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatiable" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <include file="Public/public"/>
+    <style type="text/css">
+        .title{margin:10px;}
+    </style>
+</head>
+<body>
+    <div class="title">
+        <a class="btn btn-default" href="{:U('Admin/Access/add_role')}" >添加角色</a>
+    </div>
+    <div class="container-fluid">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>名称</th>
+                    <th>描述</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <foreach name="data" item="v">
+                    <tr>
+                        <td>{$v['id']}</td>
+                        <td>{$v['name']}</td>
+                        <td>{$v['remark']}</td>
+                        <td>
+                            <a href="{:U('Admin/Access/access',array('id'=>$v['id']))}">权限配置</a>
+                            <a href="{:U('Admin/Access/del_role',array('id'=>$v['id']))}">删除</a>
+                        </td>
+                    </tr>
+                </foreach>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bootstrap 3</title>
+</head>
+<body>
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#responsive-navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand"><strong>ninghao</strong>.net</a>
+            </div>
+            <div class="collapse navbar-collapse" id="responsive-navbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="">课程</a></li>
+                <li><a href="">博客</a></li>
+                <li><a href="">手册</a></li>
+            </ul>
+            <form action="" class="navbar-form navbar-left">
+                <input type="text" placeholder="搜索" class="form-control">
+                <button type="submit">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </form>
+            <a href="" class="btn btn-primary btn-sm navbar-btn navbar-right hidden-xs">订阅课程</a>
+            <div class="profile navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="" data-toggle="modal" data-target="#login-modal">登录</a></li>
+                    <li><a href="">注册</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </nav>
+    
+  
+        <div class="carousel slide" id="slideshow" data-interval="1000" data-pause="false" data-wrap="false">
+            
+            <ol class="carousel-indicators">
+                <li data-target="#slideshow" data-slide-to="0" class="active"></li>
+                <li data-target="#slideshow" data-slide-to="1"></li>
+            </ol>
+            
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="images/01.jpg" alt="">
+                    <div class="carousel-caption">
+                        <h2>Bootstrap</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, magni</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/02.jpg" alt="">
+                    <div class="carousel-caption">
+                        <h2>JavaScript</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, esse, sapiente.</p>
+                    </div>
+                </div>                
+            </div>
+            
+            <a href="#slideshow" data-slide="prev" class="left carousel-control">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a href="#slideshow" data-slide="next" class="right carousel-control">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>  
+                
+        </div>
+        
+        <div class="text-center" style="padding: 20px;">
+            <div class="btn-group">
+                <button class="btn btn-default prev-slide">
+                    <span class="glyphicon glyphicon-backward"></span>
+                </button>
+                <button class="btn btn-default play-and-stop">
+                    <span class="glyphicon glyphicon-play"></span>
+                </button>
+                <button class="btn btn-default next-slide">
+                    <span class="glyphicon glyphicon-forward"></span>
+                </button>
+            </div>
+        </div>
+        
+    
+    
+    <div class="modal fade" id="login-modal" tabindex="-1" data-remote="login-form.html">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="lib/jquery-2.1.1.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/holder.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+//        $(function() {
+//            $('#login-modal').modal({
+//                show: false,
+//                backdrop: false,
+//                remote: 'login-form.html'
+//            });
+//        });
+        $(function() {
+            $('#login-modal').on('show.bs.modal', function() {
+                console.log('显示对话框');
+            });
+            $('#login-modal').on('shown.bs.modal', function() {
+                console.log('对话框已经显示了');
+            });
+            $('#login-modal').on('hide.bs.modal', function() {
+                console.log('隐藏对话框');
+            });
+            $('#login-modal').on('hidden.bs.modal', function() {
+                console.log('隐藏了对话框');
+            });
+            $('#login-modal').on('loaded.bs.modal', function() {
+                console.log('已经加载好了对话框里面的内容');
+            });
+            $('#slideshow').on('slide.bs.carousel', function() {
+                console.log('播放幻灯片');
+            });
+            $('#slideshow').on('slid.bs.carousel', function() {
+                console.log('播放完成！');
+            });            
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

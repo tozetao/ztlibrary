@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+/*----------ajax相关-----------*/
+// ajax请求
+function ajax_get(){
+	var url = "http://www.baidu.com";
+	var xhr = null;
+	if(window.ActiveXObject){
+		xhr = new ActiveXObject('Microsoft.XMLHTTP');
+	}else{
+		xhr = new XMLHttpRequest();
+	}
+
+	xhr.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200){
+			// 转换json对象，获取html元素，进行数据的填充
+			var json = eval('(' + this.responseText() + ')');
+
+			var contentEle = document.getElementsById('content');
+			contentEle.innerHTML = '';
+		}
+	}
+	// eval加()的分析，因为json是以{}起始结束的，eval会作为js语句块来进行分析
+	// 所以要强制将其转换成表达式来处理
+
+	xhr.open('GET', url, true);
+	xhr.sned();
+}
+
+function ajax_post(){}
+
+// ajax跨域
+// 如果使用ajax请求非本站的url，会报跨域的错误，因为js对非同源的网址做请求
+// 解决用jsonp的方式来处理
+
+// a站点文档的js代码
+var script = document.createElelement('script');
+script.setAttribute('type', 'text/javascript');
+script.src = 'http://b.com/get_content?callback=functon_name';
+function callback(json) {
+	alert(data.message);
+}
+
+// b站点的接口实现
+// $json = json_encode(['name' => 'lisi']);
+// echo "function_name($json)";
+
+
+</script>

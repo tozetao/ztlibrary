@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<title>Index</title>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button class="navbar-toggle" data-toggle="collapse" data-target="#responsive-navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+			<a href="#" class="navbar-brand"><strong>nihao</strong>.net</a>
+		</div>
+		
+		<div class="collapse navbar-collapse" id="responsive-navbar">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">课程</a></li>
+				<li><a href="#">博客</a></li>
+				<li><a href="#">手册</a></li>
+			</ul>
+
+			<form action="#" class="navbar-form navbar-left">
+				<input type="text" placeholder="搜索" class="form-control">
+				<button type="submit">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+			</form>
+
+			<a href="" class="btn btn-primary btn-sm navbar-btn navbar-right hidden-xs">订阅课程</a>
+			<div class="profile navbar-right">
+				<ul class="nav navbar-nav">
+					<li><a href="./login-form.html" data-toggle="modal" data-target="#login-modal">登陆</a></li>
+					<li><a href="">注册</a></li>
+				</ul>
+				<!-- <p class="navbar-text">您好，<a href="" class="navbar-link">王皓</a></p> -->
+			</div>
+		</div>
+	</div>
+</nav> 
+
+<div class="container">
+	<p class="alert alert-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum natus possimus distinctio quae, id repellat at reiciendis obcaecati commodi asperiores vel aliquam, eos non harum voluptatum fugit consectetur doloremque eum.</p>
+</div>
+	
+	<!-- <div class="modal in" style="display: block;"> -->
+	<div class="modal fade" id="login-modal" tabindex="-1">
+		<div class="modal-dialog modal-md">
+			<div class="modal-content">
+				
+			</div>
+		</div>
+	</div>
+	<!-- <div class="modal-backdrop in"></div> -->
+	<script src="./lib/jquery-2.1.1.min.js"></script>
+	<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+	<script>
+		// $(function(){
+		// 	$('#login-modal').modal({
+		// 		show: false,	//默认情况下是隐藏的
+		// 		backdrop: false,	//消除背景色
+		// 		remote: 'login-form.html'
+		// 	});
+		// });
+		$(function(){
+			$('#login-modal').on('show.bs.modal', function(){
+				console.log('显示对话框');
+			});
+			$('#login-modal').on('shown.bs.modal', function(){
+				console.log('对话框已经显示了');
+			});
+			$('#login-modal').on('hide.bs.modal', function(){
+				console.log('隐藏对话框');
+			});
+			$('#login-modal').on('hidden.bs.modal', function(){
+				console.log('隐藏了对话框');
+			});
+			$('#login-modal').on('loaded.bs.modal', function(){
+				console.log('已经加载好了对话框里面的内容');
+			});
+		})
+	</script>
+</body>
+</html>

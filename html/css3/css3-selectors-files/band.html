@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 自定义样式  -->
+    <style>
+        small {
+            display: inline-block;
+            min-width: 10px;
+            padding: 3px 7px;
+            font-size: 12px;
+            font-weight: normal;
+            line-height: 1;
+            color: #468847;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            background-color: #dff0d8;
+            border-radius: 10px;
+            font-family: Consolas,"Courier New",monospace;
+        }
+        * {
+            line-height: 1.5;
+        }
+        h1, h2, h3, p {
+            text-align: right;
+            line-height: 1.5;
+        }
+        h2 {
+            color: #ccc;
+            font-size: 20px;
+        }
+        .container {
+            padding: 0 10px;
+        }
+        #page-title {
+            color: #dd514c;
+        }
+
+        #page-title.title.band-name{
+            color:yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title band-name" id="page-title">Coldplay</h1>
+        <h2 class="title">London, United Kingdom (1997 – present)</h2>
+        <p>Coldplay 是英国摇滚乐坛进入新世纪之后崛起的最受欢迎的摇滚乐队之一，他们秉承了英式摇滚乐队一贯的Britpop/Alternative Rock英伦风格，成为了英国新一代乐队中的杰出代表。</p>
+        <blockquote>迄今为止，Coldplay 共获得八项格莱美奖。</blockquote>
+        <p>Coldplay有四个成员，1996年时在UCL（University College London）四人相遇，两年后决定合组此乐团。Coldplay乐队成军之后的每一张专辑都不断进步，一步一步地扩大他们的影响，目前他们正处于事业的快速上升期。</p>
+        <h3 class="title">专辑列表</h3>
+        <ul>
+            <li>Parachutes</li>
+            <li>Viva la Vida or Death and All His Friends</li>
+            <li>Paradise</li>
+            <li>Violet Hill</li>
+            <li>Lost</li>
+            <li>...</li>
+        </ul>
+    </div>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script>
+        
+        $(function () {
+           // 在文档中添加标签名，ID, 类名
+           $( 'div, h1, h2, h3, p, ul, li, blockquote' ).prepend( function() {
+               tagName = $( this ).prop( 'localName' );
+               tagID = $( this ).prop( 'id' )? '#' + $( this ).prop( 'id' ) + ' ' : '';
+               tagClass = $( this ).prop( 'className' )? '.' + $( this ).prop( 'className' ) : '';
+               tagData = $( this ).attr( 'data-album' )? '[data-album=' + $( this ).attr( 'data-album' ) + ']' : '';
+               return '<small>' + tagName + tagID + tagClass +'</small> ';
+           } );
+        });
+    </script>
+</body>
+
+</html>
+

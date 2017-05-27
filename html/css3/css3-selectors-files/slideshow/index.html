@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="zh-hans">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CSS Selectors</title>
+
+		<meta name="description" content="CSS 选择器">
+		<meta name="author" content="ninghao.net">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/ninghao.css" id="theme">
+
+		<!-- 高亮显示代码 -->
+		<link rel="stylesheet" href="lib/css/railscasts.css">
+
+		<!-- 如果说查询里包含 'print-pdf'，使用 PDF 打印样式表 -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides" style="text-align:left">
+				<section data-background="#262626">
+            <h2>CSS Selector</h2>
+						<h3><span>王皓</span></h3>
+				</section>
+
+				<!-- 01-01 ***************************************** -->
+				<section>
+						<h2>类型选择器</h2>
+						<h3><span>Type Selector</span></h3>
+					<pre class="fragment"><code contenteditable>
+div {
+  width: 960px; 
+}
+h1 {
+  font-size: 2em;
+}
+p {
+  line-height: 1.5;
+}
+					</code></pre>
+				</section>
+        
+        <!-- 01-02 ***************************************** -->
+				<section>
+					  <h2>选择器群组</h2>
+					  <h3><span>Groups of selectors</span></h3>
+					  <pre class="fragment"><code contenteditable>
+h1, 
+h2, 
+h3 {
+    line-height: 1.5;
+}
+					</code></pre>
+				</section>
+        
+        <!-- 01-03 ***************************************** -->
+					<section>
+					  <h2>通用选择器</h2>
+					  <h3><span>Universal selector</span></h3>
+					  <pre class="fragment"><code contenteditable>
+* {
+    line-height: 1.5;
+}
+					</code></pre>
+				</section>
+				<!-- 01-04 ***************************************** -->
+					<section>
+					  <h2>类选择器</h2>
+					  <h3><span>Class selectors</span></h3>
+					  <pre class="fragment"><code contenteditable>
+.container {
+    width: 720px;
+    margin: 0 auto;
+}
+.title {
+    color: #dd514c;
+}
+					</code></pre>
+				</section>
+				<!-- 01-05 ***************************************** -->
+					<section>
+					  <h2>ID 选择器</h2>
+					  <h3><span>ID selectors</span></h3>
+					  <pre class="fragment"><code contenteditable>
+#page-title {
+    color: #dd514c;
+}
+					</code></pre>
+				</section>
+				<!-- 01-06 ***************************************** -->
+					<section>
+					  <h2>属性选择器</h2>
+					  <h3><span>Attribute selectors</span></h3>
+					  <p class="fragment"><code>[attribute]</code></p>
+					  <p class="fragment"><code>[attribute1][attribute2]</code></p>
+					  <p class="fragment"><code>[attribute="value"]</code></p>
+					  <p class="fragment"><code>[attribute~="value"]</code></p>
+					  <p class="fragment"><code>[attribute|="value"]</code></p>
+				</section>
+				<!-- 01-07 ***************************************** -->
+					<section>
+					  <h2>属性选择器</h2>
+					  <h3><span>Attribute selectors</span></h3>
+					  <p class="fragment"><code>[attribute<span class="green">^</span>="value"]</code></p>
+					  <p class="fragment"><code>[attribute<span class="green">$</span>="value"]</code></p>
+					  <p class="fragment"><code>[attribute<span class="green">*</span>="value"]</code></p>
+				</section>
+				<!-- 02-01 ***************************************** -->
+        <section>
+    				<section>
+                <h2>伪类</h2>
+                <h3><span>Pseudo-classes</span></h3>
+                <p class="fragment"><code>:link</code></p>
+                <p class="fragment"><code>:visited</code></p>
+            </section>
+            <section>
+                <h2>伪类</h2>
+                <h3><span>Pseudo-classes</span></h3>
+                <pre><code contenteditable>
+a:link {
+    color: #0E90D2;
+}
+a:visited {
+    color: #CCC;
+} 
+              </code></pre>
+            </section>
+        </section>
+        <!-- 02-02 ***************************************** -->
+				<section>
+            <h2>伪类</h2>
+            <h3><span>Pseudo-classes</span></h3>
+            <p class="fragment"><code>:hover</code></p>
+            <p class="fragment"><code>:active</code></p>
+            <p class="fragment"><code>:focus</code></p>
+         </section>
+				<!-- 02-03 ***************************************** -->
+				<section>
+            <section>
+                <h2>伪类:target</h2>
+                <h3><span>Pseudo-classes</span></h3>
+                <pre><code contenteditable>
+<a href="#content">跳转至内容</a>
+...
+<div id="content">这里是主体内容...</div>
+...
+              </code></pre>
+            </section>
+            <section>
+                <h2>伪类</h2>
+                <h3><span>Pseudo-classes</span></h3>
+                <pre><code contenteditable>
+#content:target {
+    background: #eee;
+}
+              </code></pre>
+            </section>				
+				</section>
+				<!-- 02-04 ***************************************** -->
+        <section>
+            <h2>伪类:disabled</h2>
+            <h3><span>Pseudo-classes</span></h3>
+            <p class="fragment"><code>&lt;input type="text" <span class="green">disabled</span>&gt;</code></p>
+            <pre class="fragment"><code contenteditable>
+input:disabled {
+    background-color: #f5f5f5;
+} 
+          </code></pre>                
+        </section>
+				<!-- 02-05 ***************************************** -->
+        <section>
+            <h2>伪类:nth-child()</h2>
+            <h3><span>Pseudo-classes</span></h3>
+            <p class="fragment"><code>:nth-child(<span class="green">1</span>)</code></p>
+            <p class="fragment"><code>:nth-child(<span class="green">odd</span>)</code></p>
+            <p class="fragment"><code>:nth-child(<span class="green">even</span>)</code></p>
+            <p class="fragment"><code>:nth-child(<span class="green">an+b</span>)</code></p>
+        </section>
+        <!-- 02-06 ***************************************** -->
+        <section>
+            <h2>伪类:nth-last-child()</h2>
+            <h3><span>Pseudo-classes</span></h3>
+            <p class="fragment"><code>:nth-last-child(<span class="green">1</span>)</code></p>
+            <p class="fragment"><code>:nth-last-child(<span class="green">odd</span>)</code></p>
+            <p class="fragment"><code>:nth-last-child(<span class="green">even</span>)</code></p>
+            <p class="fragment"><code>:nth-last-child(<span class="green">an+b</span>)</code></p>
+        </section>
+        <!-- 02-07 ***************************************** -->
+        <section>
+            <h2>伪类</h2>
+            <h3><span>Pseudo-classes</span></h3>
+            <p class="fragment"><code>:nth-of-type()</code></p>
+            <p class="fragment"><code>:nth-last-of-type()</code></p>
+        </section>
+        <!-- 02-08 ***************************************** -->
+        <section>
+            <h2>伪类</h2>
+            <h3><span>Pseudo-classes</span></h3>
+            <p><code class="fragment">:first-child</code></p>
+            <p><code class="fragment">:nth-child(<span class="green">1</span>)</code></p>
+            <p class="fragment"><code>:last-child</code></p>
+            <p class="fragment"><code>:nth-last-child(<span class="green">1</span>)</code></p>
+        </section>
+        <!-- 02-09 ***************************************** -->
+        <section>
+            <h2>伪类</h2>
+            <h3><span>Pseudo-classes</span></h3>
+            <p><code class="fragment">:first-of-type</code></p>
+            <p><code class="fragment">:nth-of-type(<span class="green">1</span>)</code></p>
+            <p class="fragment"><code>:last-of-type</code></p>
+            <p class="fragment"><code>:nth-last-of-type(<span class="green">1</span>)</code></p>
+        </section>
+        <!-- 02-10 ***************************************** -->
+        <section>
+            <h2>伪类</h2>
+            <h3><span>Pseudo-classes</span></h3>
+            <p><code class="fragment">:only-child</code></p>
+            <p><code class="fragment">:first-child:last-child</code></p>
+            <p><code class="fragment">:nth-child(<span class="green">1</span>):nth-last-child(<span class="green">1</span>)</code></p>
+            <p><code class="fragment">:only-of-type</code></p>
+            <p><code class="fragment">:first-of-type:last-of-type</code></p>
+            <p><code class="fragment">:nth-of-type(<span class="green">1</span>):nth-last-of-type(<span class="green">1</span>)</code></p>
+        </section>
+        <!-- 02-11 ***************************************** -->
+        <section>
+            <h2>伪类:empty</h2>
+            <h3><span>Pseudo-classes</span></h3>
+            <p><code class="fragment">:empty</code></p>
+        </section>
+        <!-- 02-12 ***************************************** -->
+        <section>
+            <h2>伪类:not()</h2>
+            <h3><span>Pseudo-classes</span></h3>
+            <p><code class="fragment">:not()</code></p>
+        </section>
+				<!-- 03-01 ***************************************** -->
+        <section>
+            <h2>伪元素</h2>
+            <h3><span>Pseudo-elements</span></h3>
+            <p><code class="fragment">::first-line</code></p>
+            <p><code class="fragment">::first-letter</code></p>
+            <pre class="fragment"><code contenteditable>
+p::first-line {
+    font-weight: bold;
+}
+p::first-letter {
+    color: #0E90D2;
+}
+					</code></pre> 
+        </section>
+				<!-- 03-02 ***************************************** -->
+        <section>
+            <h2>伪元素</h2>
+            <h3><span>Pseudo-elements</span></h3>
+            <p><code class="fragment">::before</code></p>
+            <p><code class="fragment">::after</code></p>
+					  <pre class="fragment"><code data-trim contenteditable>
+h1::before {
+    content: 'before';
+}
+h1::after {
+    content: 'after';
+}
+					</code></pre>            
+        </section>
+				<!-- 04-01 ***************************************** -->
+        <section>
+            <h2>后裔</h2>
+            <h3><span>Descendant combinator</span></h3>
+            <p><code class="fragment">div img</code></p>
+            <p><code class="fragment">div <span class="green">*</span> img</code></p>
+        </section>
+				<!-- 04-02 ***************************************** -->
+        <section>
+            <h2>儿子</h2>
+            <h3><span>Child combinator</span></h3>
+            <p><code class="fragment">div <span class="green">></span> img</code></p>
+        </section>
+				<!-- 04-03 ***************************************** -->
+        <section>
+            <h2>兄弟</h2>
+            <h3><span>Sibling combinator</span></h3>
+            <p><code class="fragment">h1 <span class="green">+</span> h2</code></p>
+            <p><code class="fragment">h2 <span class="green">~</span> h3</code></p>
+        </section>
+
+        <!-- End ***************************************** -->
+				<section>
+					<h1>THE END</h1>
+		
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: false,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
